@@ -4,3 +4,12 @@ mixin icon(iconName, iconClass)
 
 mixin image(imagePath, imageAlt, imageClass)
   img(src=`/assets/images/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`)
+
+mixin title(textTitle, bg)
+  h2.maintitle(class=`maintitle_${bg}`) #{textTitle}
+
+mixin subtitle(textTitle, jsClass)
+  if (jsClass)
+    h3.subtitle(class=`${jsClass}`) #{textTitle}
+  else
+    h3.subtitle #{textTitle}

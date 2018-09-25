@@ -1,0 +1,44 @@
+.maintitle {
+  @include SansusWebissimo();
+  position: relative;
+  display: block;
+  max-width: 505px;
+  margin-bottom: 33px;
+  padding: 50px 76px 25px 76px;
+  font-weight: 400;
+  font-size: 63px;
+  color: #373e42;
+  text-align: center;
+  line-height: 1.15;
+  text-transform: uppercase;
+
+  &::after {
+    position: absolute;
+    left: 50%;
+    display: block;
+    width: 89px;
+    margin-top: 20px;
+    padding: 1.5px 0;
+    transform: translateX(-50%);
+    content: ' ';
+    background-color: #373e42;
+  }
+}
+
+.maintitle_works {
+  background: url('/assets/images/bg/works_header.png') center center no-repeat;
+  background-size: contain;
+}
+
+.maintitle_about {
+  background: url('/assets/images/bg/about_header.png') center center no-repeat;
+  background-size: contain;
+}
+
+.maintitle_blog {
+  color: $white;
+  padding-top: 0;
+  &::after {
+    background-color: $white;
+  }
+}

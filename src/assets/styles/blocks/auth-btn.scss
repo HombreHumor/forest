@@ -1,0 +1,25 @@
+.auth-btn {
+  position: absolute;
+  top: 20px;
+  right: 19px;
+  display: block;
+  padding: 15px 28px;
+  border: 1px solid $white;
+  border-radius: 35px;
+  background: none;
+  color: $white;
+  text-decoration: none;
+}
+
+.auth-btn:hover,
+.auth-btn:focus,
+.auth-btn:active {
+  border: 1px solid $light_green;
+  background-color: $dark_green;
+}
+
+@media (min-width: 1800px) {
+  .auth-btn {
+    right: 7%;
+  }
+}

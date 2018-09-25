@@ -6,7 +6,7 @@ body {
   font-family: 'Roboto', Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.42;
-  color: $text-color;
+  color: $white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -20,6 +20,13 @@ body {
 .container {
   margin: 0 auto;
   width: 95%;
+}
+
+.footer-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 button {
@@ -45,4 +52,25 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin: 0;
   padding: 0;
+}
+
+button[type="button"] {
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+a {
+  color: $white;
+  transition: all .3s ease;
+
+  &:visited {
+    color: $white;
+  }
+}
+
+.text-block {
+  p {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
 }

@@ -2,9 +2,42 @@ extends ../main.layout.pug
 
 block variables
   - var title = 'Обо мне'
+  - var skills = [{"title":"Frontend","skills":[{"skill":"HTML5", "progress":95},{"skill":"CSS3", "progress":90},{"skill":"Javascript & jQuery", "progress":85}]},{"title":"Backend","skills":[{"skill":"PHP", "progress":30},{"skill":"MySQL", "progress":40},{"skill":"Node.JS & npm", "progress":70},{"skill":"MondoDB", "progress":50}]},{"title":"Workflow","skills":[{"skill":"Git", "progress":80},{"skill":"Gulp", "progress":70},{"skill":"Webpack", "progress":60}]}]
+  - function calcProgressDash(percent) {var fillDash = 2.83*percent; var emptyDash = 2.83*(100-percent); return fillDash+' '+emptyDash}
+  - function calcOpacity(percent) {return percent/100}
 
 block scripts
   script(src='about.bundle.js')
 
 block content
-  h1 Страничка "Обо Мне"  
+  include ../common/main-header.pug
+  main.about
+    section.about__persona.persona
+      +title('Обо мне', 'about')
+      +image("content/user.jpg", "Владимир Астахов (фото)", "persona__photo")
+      +subtitle('Кто я', 'subtitle--persona')
+      .persona__info
+        p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+        p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+    section.about__skills.skills
+      +subtitle('Чем я могу быть вам полезен', 'subtitle--skills')
+      span.skills__text Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+      ul.skills__list
+        each row in skills
+          li.skills__item
+            h4.skills__title #{row.title}
+            .skills__row
+              each skill in row.skills
+                .skills__skill
+                  svg.skills__circle(viewBox='0 0 120 120', width='120', height='120')
+                    circle.skill__back(cx="50%" cy="50%" r="45")
+                    circle.skill__front(cx="50%" cy="50%" r="45", style=`stroke-dasharray: ${calcProgressDash(skill.progress)}; opacity: ${calcOpacity(skill.progress)}`)
+                  span.skills__skillname #{skill.skill}
+  .map
+    .map__contacts
+      +subtitle('Контакты', 'subtitle--map')
+      ul.map__contacts-list
+        li.map__contact-item.map__contact-item--skype skype_kdn
+        li.map__contact-item.map__contact-item--mail astahov@gmail.com
+        li.map__contact-item.map__contact-item--phone +7 931 200 93 24
+        li.map__contact-item.map__contact-item--address Новосибирск, ул. Инская, д.14

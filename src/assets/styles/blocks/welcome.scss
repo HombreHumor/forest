@@ -1,0 +1,27 @@
+.welcome {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background: url('/assets/images/bg/forest.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+.welcome__container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform .5s ease;
+  backface-visibility: hidden;
+}
+
+.welcome__footer {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+}

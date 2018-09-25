@@ -1,0 +1,49 @@
+extends ../main.layout.pug
+
+block variables
+  - var title = 'Мои работы'
+  - var abouts = [{"image": "content/abouts-1.png","text":"Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!","name":"Ковальчук Дмитрий","job":"основатель Loftschool"},{"image": "content/abouts-2.png","text":"Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!","name":"Сабанцев Владимир","job":"преподаватель"}]
+
+block scripts
+  script(src='works.bundle.js')
+
+block content
+  include ../common/main-header.pug
+  .works
+    +title('Мои работы', 'works')
+    .slider
+      .slider__left
+        +subtitle('Сайт школы онлайн Образования', 'js-slider-title')
+        b.slider__used.js-slider-used HTML , CSS, JAVASCRIPT
+        a.slider__cite-btn.js-slider-cite-btn(href="#")
+          span.slider__cite-btn-text Посмотреть сайт
+      .slider__right.js-slider
+        .slider__right-main
+          +image('/content/work-1.png', 'Сайт школы онлайн Образования', 'slider__right-image js-main-slide')
+        .slider__right-buttons
+          button.slider__btn.slider__btn-prev.js-slider-prev(type="button")
+            +image('/content/work-3.png', 'Сайт школы онлайн Образования', 'slider__btn-image')
+          button.slider__btn.slider__btn-next.js-slider-next(type="button")
+            +image('/content/work-2.png', 'Сайт школы онлайн Образования', 'slider__btn-image')
+  .abouts
+    +title('Что обо мне говорят', 'about')
+    ul.abouts__list
+      each item in abouts
+        li.abouts__item
+          +image(item.image, item.name, "abouts__photo")
+          p.abouts__text #{item.text}
+          b.abouts__name #{item.name}
+          span.abouts__job= '— '+item.job
+    form.abouts__form(action="")
+      +subtitle('Связаться со мной', 'subtitle--abouts')
+      input.abouts__input(type="text", placeholder="Имя")
+      input.abouts__input(type="text", placeholder="Email")
+      textarea.abouts__input.abouts__input--textarea(placeholder="Ваше сообщение")
+      nav.welc-menu
+        ul.welc-menu__list
+          li.welc-menu__item.welc-menu__item--auth
+              button.welc-menu__button.js-abouts-form-submit(type='submit') Отправить
+          li.welc-menu__item.welc-menu__item--auth
+              button.welc-menu__button(type='reset') Очистить
+    button.abouts__up-btn(type="button")
+    

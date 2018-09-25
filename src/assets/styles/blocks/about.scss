@@ -1,0 +1,30 @@
+.about {
+  display: flex;
+  flex-direction: row;
+}
+
+.about__persona,
+.about__skills {
+  flex-basis: 50%;
+  margin-top: -80px;
+  padding-top: 30px;
+}
+
+.about__persona {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 80px;
+  padding-right: 80px;
+  background-color: #ebefe2;
+  padding-bottom: 15px;
+}
+
+.about__skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: #f4f5f0;
+}

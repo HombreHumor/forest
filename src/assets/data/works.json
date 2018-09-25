@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Сайт школы онлайн Образования",
+    "image": "/assets/images/content/work-1.png",
+    "used": ["html", "css", "javascript"],
+    "link": "#1"
+  },
+  {
+    "title": "Дизайн",
+    "image": "/assets/images/content/work-2.png",
+    "used": ["html", "css"],
+    "link": "#2"
+  },
+  {
+    "title": "Будда",
+    "image": "/assets/images/content/work-3.png",
+    "used": ["css", "javascript"],
+    "link": "#3"
+  }
+]

@@ -1,0 +1,143 @@
+.slider {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider__left,
+.slider__right {
+  flex-basis: 50%;
+  min-height: 750px;
+}
+
+.slider__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ebefe2;
+}
+
+.slider__used {
+  margin-bottom: 58px;
+  text-align: center;
+  color: $dark_green;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.slider__cite-btn {
+  position: relative;
+  padding: 13px 20px;
+  background-color: $green;
+  border-radius: 40px;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $dark_green;
+  }
+}
+
+.slider__cite-btn-text {
+  font-weight: 500;
+  padding-left: 30px;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 18px;
+    content: '';
+    width: 19.125px;
+    height: 19.125px;
+    background: svg-load('link.svg', fill=$white) center center no-repeat;
+  }
+}
+
+.slider__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e1e4d7;
+}
+
+.slider__right-main {
+  width: 100%;
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider__right-image {
+  max-width: 90%;
+  transition: all .3s ease;
+}
+
+.slider__right-buttons {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider__btn {
+  position: relative;
+  height: 230px;
+  flex-basis: 50%;
+  padding: 25px 0 10px;
+  background-color: rgba(176, 183, 170, 0.7);
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: rgba(147, 153, 141, 0.7);
+  }
+}
+
+.slider__btn-prev {
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    transform: translate(-50%, -50%);
+    width: 43px;
+    height: 27px;
+    background: svg-load('arrow_down.svg', fill=$white) center center no-repeat;
+    background-size: contain;
+    z-index: 10;
+  }
+}
+
+.slider__btn-next {
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    transform: translate(-50%, -50%);
+    width: 43px;
+    height: 27px;
+    background: svg-load('portf_arrow_up.svg', fill=$white) center center no-repeat;
+    background-size: contain;
+    z-index: 10;
+  }
+}
+
+.slider__btn-image {
+  max-width: 85%;
+  object-fit: contain;
+  opacity: .5;
+  transition: all .3s ease;
+}

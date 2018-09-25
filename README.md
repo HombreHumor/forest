@@ -1,11 +1,15 @@
-# Учебный шаблон проекта Portfolio
+# Выпускной проект продвинутого курса профессии "Веб-разработчик"
+
+**Тема проекта:** Forest<br/>
+**Автор:** Игорь Александрович Крамарь<br/>
+**Дата прохождения курса:** 17.09.2018 - 24.10.2018<br/>
 
 > Перед установкой зависимостей и запуском проекта убедитесь, что у вас установлена [последняя версия Node.js & NPM](https://nodejs.org/en/download/current/)
 
 ##  Чтобы развернуть проект необходимо:
 ```sh
-$ git clone git@github.com:loftschool/advanced-boilerplate.git
-$ cd advanced-boilerplate
+$ git clone https://github.com/HombreHumor/forest.git
+$ cd forest
 $ npm install
 ```
 

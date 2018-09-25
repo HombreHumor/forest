@@ -1,0 +1,12 @@
+header.main-header
+    .main-header__top.container
+      ul.socials
+          each item in ['vk', 'gh', 'ln']
+            li.socials__item
+              a.socials__link.socials__link--main(href="#", class=`socials__link--`+item)
+      button.main-header__menu-btn(type="button")
+    .main-header__center.container
+      +image("content/user.jpg", "Владимир Астахов (фото)", "main-header__photo")
+      h1.main-header__title Владимир Астахов
+      h2.main-header__subtitle Личный сайт веб разработчика
+    button.main-header__down-btn(type="button")

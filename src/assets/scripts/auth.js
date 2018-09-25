@@ -1,1 +1,3 @@
-console.log("auth module loaded");
+import toggleFace from "./modules/toggleFace";
+
+toggleFace();

@@ -1,0 +1,33 @@
+.subtitle {
+  @include SansusWebissimo();
+  position: relative;
+  display: block;
+  max-width: 505px;
+  margin-bottom: 33px;
+  padding: 50px 76px 20px 76px;
+  font-weight: 400;
+  font-size: 35px;
+  color: #566358;
+  text-align: center;
+  line-height: 1.15;
+  text-transform: uppercase;
+
+  &::after {
+    position: absolute;
+    left: 50%;
+    display: block;
+    width: 90px;
+    margin-top: 20px;
+    padding: 1.5px 0;
+    transform: translateX(-50%);
+    content: ' ';
+    background-color: #566358;
+  }
+}
+
+.subtitle--abouts,
+.subtitle--persona,
+.subtitle--map {
+  padding: 0;
+  margin-bottom: 50px;
+}

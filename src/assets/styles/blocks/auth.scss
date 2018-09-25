@@ -1,0 +1,198 @@
+.auth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 380px;
+  padding: 40px 20px;
+  background-color: $dark;
+}
+
+.auth__container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  backface-visibility: hidden;
+  transition: transform .5s ease;
+}
+
+.auth__title {
+  @include SansusWebissimo();
+  font-size: 35px;
+  line-height: 41px;
+  text-transform: uppercase;
+  padding-bottom: 31px;
+}
+
+.auth__title::after {
+  display: block;
+  width: 89px;
+  padding: 1.5px 0;
+  transform: translateX(75%);
+  content: ' ';
+  margin-top: 26px;
+  background-color: $white;
+}
+
+.auth__input {
+  width: 100%;
+  padding: 16px 18px 16px 63px;
+  border: none;
+  border-radius: 30px;
+  color: rgba(55, 62, 66, .5)
+}
+
+.auth__label {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.auth__label::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 100%;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background-color: #f0efe9;
+}
+
+.auth__label-icon {
+  position: absolute;
+  left: -22px;
+}
+
+.auth__label-icon--login {
+  width: 15px;
+  height: 17px;
+  background: svg-load('login.svg', fill=#c4cbcd) center center no-repeat;
+}
+
+.auth__label-icon--password {
+  width: 18px;
+  height: 17px;
+  background: svg-load('password.svg', fill=#c4cbcd) center center no-repeat;
+}
+
+// checkbox
+
+.auth__checkbox-row {
+  margin-bottom: 19px;
+}
+
+.auth__checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  margin: 10px 0 0 20px;
+}
+
+.auth__checkbox-label {
+  position: relative;
+  opacity: 0.8;
+  padding: 0 0 0 30px;
+  cursor: pointer;
+}
+
+.auth__checkbox-label:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 21px;
+  height: 20px;
+  border-radius: 3px;
+  background-color: $white;
+  transition: .2s;
+}
+
+.auth__checkbox-label:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 12px;
+  height: 9px;
+  opacity: 0;
+  background: svg-load('check.svg', fill=$white) center center no-repeat;
+  background-size: 90%;
+  transition: .2s;
+}
+
+.auth__checkbox:checked+.auth__checkbox-label:before {
+  background: $green;
+}
+
+.auth__checkbox:checked+.auth__checkbox-label:after {
+  opacity: 1;
+}
+
+// radio
+
+.auth__question {
+  opacity: 0.8;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.auth__radio-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.auth__radio-row--left {
+  margin-right: 39px;
+}
+
+.auth__radio {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  margin: 10px 0 0 20px;
+}
+
+.auth__radio-label {
+  position: relative;
+  opacity: 0.8;
+  padding: 0 0 0 30px;
+  cursor: pointer;
+}
+
+.auth__radio-label:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: $white;
+  transition: .2s;
+}
+
+.auth__radio-label:after {
+  content: '';
+  position: absolute;
+  top:6px;
+  left: 6px;
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: $dark_green;
+  opacity: 0;
+  transition: .2s;
+}
+
+.auth__radio:checked+.auth__radio-label {
+  color: $dark_green;
+}
+
+.auth__radio:checked+.auth__radio-label:after {
+  opacity: 1;
+}

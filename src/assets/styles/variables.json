@@ -1,9 +1,9 @@
 {
-  "white": "#efeee9",
-  "beige": "#eeebdf",
-  "green": "#16c2aa",
-  "text-color": "#455a64",
-  "grey": "#373e42",
-  "light-grey": "#dfdcd5",
-  "test" : "#000"
+  "white": "#ffffff",
+  "dark_green": "#4e8839",
+  "grey": "#dee3e7",
+  "dark": "rgba(18, 38, 32, .6)",
+  "green": " #6c9c5a",
+  "creame": "#e2e2e2",
+  "light_green": "#729e19"
 }

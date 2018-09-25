@@ -79,13 +79,13 @@ gulp.task("server", () => {
 gulp.task("svg", done => {
   return gulp
     .src(`${config.SRC_DIR}/images/icons/*.svg`)
-    .pipe(
-      $gp.svgmin({
-        js2svg: {
-          pretty: true
-        }
-      })
-    )
+    // .pipe(
+    //   $gp.svgmin({
+    //     js2svg: {
+    //       pretty: true
+    //     }
+    //   })
+    // )
     .pipe(
       $gp.cheerio({
         run($) {
@@ -122,12 +122,22 @@ gulp.task("images", () => {
     .pipe(gulp.dest(`${config.DIST_DIR}/assets/images/`));
 });
 
+// переносим внешний JSON
+gulp.task("dataJSON", () => {
+  return gulp
+    .src([
+      `${config.SRC_DIR}/data/**/*.*`
+    ])
+    .pipe(gulp.dest(`${config.DIST_DIR}/assets/data/`));
+});
+
 // галповский вотчер
 gulp.task("watch", () => {
   gulp.watch(`${config.SRC_DIR}/styles/**/*.scss`, gulp.series("styles"));
   gulp.watch(`${config.SRC_DIR}/images/**/*.*`, gulp.series("images"));
   gulp.watch(`${config.SRC_DIR}/scripts/**/*.js`, gulp.series("scripts"));
   gulp.watch(`${config.SRC_DIR}/fonts/*`, gulp.series("fonts"));
+  gulp.watch(`${config.SRC_DIR}/data/**/*.*`, gulp.series("dataJSON"));
   gulp.watch(`${config.VIEWS_DIR}/**/*.pug`, gulp.series("pug"));
 });
 
@@ -137,7 +147,7 @@ gulp.task(
   gulp.series(
     "clean",
     "svg",
-    gulp.parallel("styles", "pug", "images", "fonts", "scripts"),
+    gulp.parallel("styles", "pug", "images", "dataJSON", "fonts", "scripts"),
     gulp.parallel("watch", "server")
   )
 );
@@ -148,6 +158,6 @@ gulp.task(
   gulp.series(
     "clean",
     "svg",
-    gulp.parallel("styles", "pug", "images", "fonts", "scripts")
+    gulp.parallel("styles", "pug", "images", "dataJSON", "fonts", "scripts")
   )
 );
