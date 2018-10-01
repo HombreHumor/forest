@@ -88,4 +88,168 @@
   .slider__right-main {
     flex: 0;
   }
+
+  .abouts {
+    padding: 0 24px;
+  }
+
+  .abouts__up-btn {
+    margin-bottom: 45vh;
+  }
+
+  .blog__nav {
+    display: none;
+  }
+
+  .blog__article:last-child {
+    margin-bottom: 20vh;
+  }
+}
+
+@media (max-width: 320px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  .maintitle {
+    font-size: 35px;
+  }
+
+  .subtitle {
+    font-size: 21px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  // footer 
+
+  .footer__container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer__col {
+    justify-content: center;
+    padding: 0;
+    align-items: center;
+    text-align: center;
+
+    &:not(:first-child) {
+      margin-top: 0;
+    }
+
+    &:not(:last-child) {
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255,255,255,.2);
+    }
+
+    .socials {
+      justify-content: center;
+    }
+  }
+  
+  // welcome page
+
+  .welcome__container,
+  .auth__container,
+  .welc-menu__list {
+    max-width: 95vw;
+  }
+
+  .hello,
+  .auth {
+    min-width: auto;
+  }
+
+  .hello__name,
+  .hello__descr {
+    text-align: center;
+  }
+
+  .welc-menu {
+    max-width: auto;
+  }
+
+  .welc-menu__link {
+    font-size: 14px;
+    padding: 15px 15px;
+  }
+
+  .auth-btn {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  // my works page
+
+  .slider__left {
+    .subtitle {
+      font-size: 21px;
+    }
+  }
+
+  .abouts__list {
+    flex-direction: column;
+  }
+
+  .abouts__item {
+    margin-bottom: 40px;
+  }
+
+  .abouts__up-btn {
+    margin-bottom: 55vh;
+  }
+
+  .abouts__form {
+    width: 90vw;
+
+    .welc-menu {
+      width: 90vw;
+    }
+
+    .welc-menu__list {
+      width: 90vw;
+    }
+
+    .welc-menu__button {
+      padding: 14px;
+    }
+  }
+
+  // about page
+
+  .about__persona {
+    padding: 0;
+    margin-top: -120px;
+  }
+
+  .persona__info {
+    padding: 0 10px;
+    font-size: 14px;
+    text-align: justify;
+  }
+
+  .about__skills {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .skills__row {
+    .skills__skill {
+      margin: 0 5px;
+    }
+  }
+
+  .map__contacts {
+    top: 0%;
+    transform: translate(-50%,0%);
+    padding: 35px 65px;
+  }
+
+  // blog
+
+  
 }
