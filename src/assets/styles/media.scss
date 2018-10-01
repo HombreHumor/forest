@@ -1,0 +1,91 @@
+@media (max-width: 768px) {
+  
+  // About page
+
+  .about {
+    flex-direction: column;
+    padding-top: 30px;
+  }
+
+  .about__persona {
+    margin-top: -150px;
+  }
+
+  .maintitle_about {
+    margin-top: 70px;
+  }
+
+  .about__skills {
+    margin-top: 0;
+  }
+
+  .skills__text {
+    max-width: 80%;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .skills__list {
+    align-items: center;
+  }
+
+  .skills__title {
+    text-align: center;
+  }
+
+  .skills__row {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    .skills__skill {
+      margin-right: 0;
+      margin: 0 17px;
+    }
+  }
+
+  // Footer
+
+  .footer__container {
+    flex-wrap: wrap;
+  }
+
+  .footer__col:not(:first-child) {
+    border-left: 0;
+  }
+
+  // My works page
+
+  .slider {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .slider__left {
+    width: 100%;
+    min-height: auto;
+    .subtitle {
+      font-size: 30px;
+      padding: 50px 0 20px;
+    }
+    .slider__used {
+      margin-bottom: 38px;
+    }
+  }
+
+  .slider__cite-btn {
+    margin-bottom: 60px;
+  }
+
+  .slider__right {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    min-height: auto;
+    padding: 80px;
+  }
+
+  .slider__right-main {
+    flex: 0;
+  }
+}

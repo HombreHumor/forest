@@ -17,4 +17,9 @@ export default () => {
     toggleFace();
     authBtn.style.display = 'block';
   });
+
+  if (window.location.href.indexOf('auth') + 1) {
+    toggleFace();
+    authBtn.style.display = 'none';
+  }
 }

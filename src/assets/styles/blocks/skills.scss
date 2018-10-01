@@ -25,12 +25,13 @@
 .skills__row {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   margin-bottom: 40px;
 }
 
 .skills__skill {
   position: relative;
-  max-width: 111px;
+  max-width: 120px;
   &:not(:last-child) {
     margin-right: 37px;
   }

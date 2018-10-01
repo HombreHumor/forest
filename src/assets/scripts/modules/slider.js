@@ -35,7 +35,7 @@ function fillSlider() {
 export default () => {
 
   prevSlide.addEventListener('click', () => {
-    currentSlide = slideLimiter(currentSlide -1);
+    currentSlide = slideLimiter(currentSlide - 1);
     fillSlider();
   })
 

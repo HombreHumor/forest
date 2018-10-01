@@ -5,7 +5,7 @@ footer.footer
 
       .footer__col 
         ul.footer__menu
-          each item in [['Мои работы', './works.html'],['Обо мне', './about.html'],['Блог', './blog.html'],['Авторизация', './index.html']]
+          each item in [['Мои работы', './works.html'],['Обо мне', './about.html'],['Блог', './blog.html'],['Авторизация', './index.html?auth']]
             li.footer__item
               a.footer__link(href=item[1]) #{item[0]}
         ul.socials
