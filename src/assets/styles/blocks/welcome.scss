@@ -6,8 +6,6 @@
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  background: url('/assets/images/bg/forest.jpg') center center no-repeat;
-  background-size: cover;
 }
 
 .welcome__container {
@@ -17,6 +15,7 @@
   transform: translate(-50%, -50%);
   transition: transform .5s ease;
   backface-visibility: hidden;
+  z-index: 2;
 }
 
 .welcome__footer {
@@ -24,4 +23,5 @@
   bottom: 40px;
   width: 100%;
   text-align: center;
+  z-index: 2;
 }

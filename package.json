@@ -68,6 +68,9 @@
     "not ie <= 8"
   ],
   "dependencies": {
+    "curry": "^1.2.0",
+    "gsap": "^2.0.2",
+    "lodash": "^4.17.11",
     "normalize.css": "^7.0.0",
     "promptly": "^3.0.3",
     "pug": "^2.0.3",
