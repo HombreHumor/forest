@@ -86,13 +86,15 @@ html(lang="en")
           gl_FragColor=vec4(c.rgb,1.0);
       }
     script.
-      var container;
-      var camera, scene, renderer;
-      var uniforms;
-      var mouse = {x:0, y:0};
-      var loader = new THREE.TextureLoader();
-      init();
-      animate();
+      if (window.innerWidth >= 1200) {
+            var container;
+            var camera, scene, renderer;
+            var uniforms;
+            var mouse = {x:0, y:0};
+            var loader = new THREE.TextureLoader();
+            init();
+            animate();
+        }
       
       function init() {
           container = document.getElementById( 'container' );
@@ -125,7 +127,7 @@ html(lang="en")
           
           container.appendChild( renderer.domElement );
           onWindowResize();
-          window.addEventListener( 'resize', onWindowResize, false );
+        //-   window.addEventListener( 'resize', onWindowResize, false );
       }
       
       function onWindowResize( event ) {
