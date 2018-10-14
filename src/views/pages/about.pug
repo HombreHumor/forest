@@ -7,8 +7,8 @@ block variables
   - function calcOpacity(percent) {return percent/100}
 
 block scripts
+  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw6BYEWm9ft20VkdRBtctm5pTSccf52Ro")
   script(src='about.bundle.js')
-
 block content
   include ../common/main-header.pug
   main.about
@@ -34,6 +34,7 @@ block content
                     circle.skill__front(cx="50%" cy="50%" r="45", style=`stroke-dasharray: ${calcProgressDash(skill.progress)}; opacity: ${calcOpacity(skill.progress)}`)
                   span.skills__skillname #{skill.skill}
   .map
+    .map__gmap#gmap
     .map__contacts
       +subtitle('Контакты', 'subtitle--map')
       ul.map__contacts-list
