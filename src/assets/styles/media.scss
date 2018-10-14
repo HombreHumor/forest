@@ -1,12 +1,6 @@
 @media (max-width: 1200px) {
-  .welcome {
-    background: url('/assets/images/bg/forest.jpg') no-repeat center center;
-    background-size: cover;
-  }
   #container {
-    &::after  {
-      display: none;
-    }
+    display: none;
   }
 }
 
