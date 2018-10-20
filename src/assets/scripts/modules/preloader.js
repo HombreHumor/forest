@@ -32,20 +32,22 @@ export default () => {
             }
 
             allImg = 100 / imgArr.length;
-
             for (let j = 0; j < imgArr.length; j++) {
-              // preloadText.innerText = `${Math.ceil(progress)}%`;
               imgArr[j].onload = function () {
                 progress += allImg;
+                console.log(progress);
                 if (progress < 100) {
-                  preloadText.innerText = Math.ceil(progress) + '%';
+                  preloadText.innerText = `${Math.ceil(progress)}%`;
                 } else {
                   progress = 100;
                   preloadText.innerText = progress + '%';
                 }
-
+                console.log(preloadText);
+                console.log(preloadText.innerText);
                 if (Math.ceil(progress) === 100) {
-                  resolve();
+                  setTimeout(() => {
+                    resolve();
+                  }, 1000);
                 }
               };
             }
