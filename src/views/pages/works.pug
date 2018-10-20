@@ -25,7 +25,8 @@ block content
             +image('/content/work-3.png', 'Сайт школы онлайн Образования', 'slider__btn-image')
           button.slider__btn.slider__btn-next.js-slider-next(type="button")
             +image('/content/work-2.png', 'Сайт школы онлайн Образования', 'slider__btn-image')
-  .abouts.js-blur
+  .abouts
+    .abouts__wrapper-bg.js-abouts-bg
     +title('Что обо мне говорят', 'about')
     ul.abouts__list
       each item in abouts
@@ -34,17 +35,19 @@ block content
           p.abouts__text #{item.text}
           b.abouts__name #{item.name}
           span.abouts__job= '— '+item.job
-    form.abouts__form.js-feedback(action="")
-      .abouts__bg
-      +subtitle('Связаться со мной', 'subtitle--abouts')
-      input.abouts__input(type="text", placeholder="Имя")
-      input.abouts__input(type="text", placeholder="Email")
-      textarea.abouts__input.abouts__input--textarea(placeholder="Ваше сообщение")
-      nav.welc-menu
-        ul.welc-menu__list
-          li.welc-menu__item.welc-menu__item--auth
-              button.welc-menu__button.js-abouts-form-submit(type='submit') Отправить
-          li.welc-menu__item.welc-menu__item--auth
-              button.welc-menu__button(type='reset') Очистить
+    .abouts__form-wrapper.js-blur-wrapper
+      .abouts__bg.js-blur
+      form.abouts__form(action="")
+        
+        +subtitle('Связаться со мной', 'subtitle--abouts')
+        input.abouts__input(type="text", placeholder="Имя")
+        input.abouts__input(type="text", placeholder="Email")
+        textarea.abouts__input.abouts__input--textarea(placeholder="Ваше сообщение")
+        nav.welc-menu
+          ul.welc-menu__list
+            li.welc-menu__item.welc-menu__item--auth
+                button.welc-menu__button.js-abouts-form-submit(type='submit') Отправить
+            li.welc-menu__item.welc-menu__item--auth
+                button.welc-menu__button(type='reset') Очистить
     button.abouts__up-btn(type="button")
     

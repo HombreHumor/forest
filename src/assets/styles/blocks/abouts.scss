@@ -9,6 +9,16 @@
   background-size: 100%;
 }
 
+.abouts__wrapper-bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+}
+
 .abouts__list {
   max-width: 780px;
   display: flex;
@@ -58,27 +68,32 @@
   color: $dark_green;
 }
 
-.abouts__form {
+.abouts__form-wrapper {
   position: relative;
+  overflow: hidden;
+  margin: 0 auto 70px;
   max-width: 380px;
-  // background-color: rgba(228, 228, 228, 0.7);
+}
+
+.abouts__form {
+  max-width: 380px;
   padding: 32px 20px 0 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 75px;
   overflow: hidden;
 }
 
 .abouts__bg {
-  position: absolute;
-  left: -calc(100vw - 380px);
-  width: 100vw;
-  height: 100%;
   background: url('/assets/images/bg/works-about-bg.jpg') bottom center no-repeat;
-  filter: blur(5px);
   background-size: 100%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
 }
 
 .abouts__input {

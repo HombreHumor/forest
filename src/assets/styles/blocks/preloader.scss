@@ -10,6 +10,7 @@
   background-size: cover;
   z-index: 9997;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -17,6 +18,9 @@
 
 .preloader__svg {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 150px;
   height: 150px;
   z-index: 9998;
@@ -24,19 +28,19 @@
 
 .preloader__svg-first {
   stroke: #fff;
-  animation: spin 3s infinite linear;
+  animation: spin 3s infinite ease-in-out;
   animation-delay: 1s;
 }
 
 .preloader__svg-second {
   stroke: #fff;
-  animation: spin 3s infinite linear;
+  animation: spin 3s infinite ease-in-out;
   animation-delay: 1s;
 }
 
 .preloader__svg-third {
   stroke: #fff;
-  animation: spin 3s infinite linear;
+  animation: spin 3s infinite ease-in-out;
 }
 
 @keyframes spin {
@@ -51,9 +55,7 @@
 
 .preloader__text {
   color: #fff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  font-size: 2.5em;
+  margin-bottom: -1em;
   z-index: 9999;
 }

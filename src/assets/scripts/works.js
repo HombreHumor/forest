@@ -6,32 +6,31 @@ preloader();
 slider();
 resizeSlider();
 
-// let blur = (function () {
-//   let wrapper = document.querySelector('.js-feedback'),
-//     form = document.querySelector('.abouts__bg ');
+const blur = (function () {
+  const container = document.querySelector('.js-blur-wrapper');
+  const formBlur = document.querySelector('.js-blur');
 
-//   return {
-//     set: function () {
-//       let imgTop = document.querySelector('.js-blur').offsetTop;
-//       let wrapperTop = document.querySelector('.abouts__form').clientY;
-//       let trY = imgTop - wrapperTop;
-//       console.log(imgTop, wrapperTop);
-//       form.style.transform = `translateY(-${trY}px)`;
-//       // let imgWidth = document.querySelector('.js-blur').offsetWidth,
-//       //   imgHeight = document.querySelector('.js-blur').offsetHeight,
-//       //   posLeft = -wrapper.offsetLeft,
-//       //   posTop = -wrapper.offsetTop,
-//       //   blurCSS = form.style;
-//       //   blurCSS.transform = `translateX(${posLeft})`;
-//       // blurCSS.width = `${imgWidth}px`;
-//       // blurCSS.height = `${imgHeight}px`;
-//       // blurCSS.transform = `translate(${posLeft}px,${posTop}px)`;
-//     },
-//   };
-// }());
+  return {
+    set: function () {
+      const bgWidth = document.querySelector('.js-abouts-bg').offsetWidth;
+      const bgHeight = document.querySelector('.js-abouts-bg').offsetHeight;
+      const posLeft = -container.offsetLeft;
+      const posTop = -container.offsetTop;
+      const blurCSS = formBlur.style;
 
-// blur.set();
+      console.log(posLeft);
 
-// window.onresize = function () {
-//   blur.set();
-// };
+      blurCSS.width = `${bgWidth}px`;
+      blurCSS.height = `${bgHeight}px`;
+      blurCSS.transform = `translate(${posLeft}px,${posTop}px`;
+      blurCSS.webkitTransform = `translate(${posLeft}px,${posTop}px`;
+    }
+  }
+}());
+
+window.onresize = function () {
+  blur.set();
+}
+window.onload = function () {
+  blur.set();
+}
