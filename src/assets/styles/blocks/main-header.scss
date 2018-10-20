@@ -115,22 +115,6 @@
   text-align: center;
 }
 
-.main-header__down-btn {
-  display: block;
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 25.18px;
-  height: 16.164px;
-  background: svg-load('arrow_down.svg', fill=$grey) center center no-repeat;
-  &:hover,
-  &:focus,
-  &:active {
-    background-image: svg-load('arrow_down.svg', fill=$white);
-  }
-}
-
 .main-header__blog-text {
   font-weight: 400;
 }

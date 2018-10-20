@@ -11,8 +11,6 @@ export default () => {
         const posTop = -container.offsetTop;
         const blurCSS = formBlur.style;
 
-        console.log(posLeft);
-
         blurCSS.width = `${bgWidth}px`;
         blurCSS.height = `${bgHeight}px`;
         blurCSS.transform = `translate(${posLeft}px,${posTop}px`;

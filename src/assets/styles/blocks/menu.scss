@@ -10,10 +10,12 @@
   background: rgba(108, 156, 90, .87);
   z-index: 1;
   transform: translateX(-100vw);
+  opacity: 0;
   transition: transform .7s ease;
 }
 
 .menu--show {
+  opacity: 1;
   transform: translateX(0);
 }
 

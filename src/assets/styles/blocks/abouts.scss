@@ -110,17 +110,3 @@
   resize: vertical;
   min-height: 140px;
 }
-
-.abouts__up-btn {
-  width: 26px;
-  height: 16px;
-  background: svg-load('portf_arrow_up.svg', fill=$grey) center center no-repeat;
-  background-size: contain;
-  margin-bottom: 250px;
-
-  &:hover,
-  &:focus,
-  &:active {
-    background-image: svg-load('portf_arrow_up.svg', fill=$white);
-  }
-}

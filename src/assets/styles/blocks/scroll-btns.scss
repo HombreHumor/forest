@@ -1,0 +1,31 @@
+.down-btn {
+  display: block;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25.18px;
+  height: 16.164px;
+  background: svg-load('arrow_down.svg', fill=$grey) center center no-repeat;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-image: svg-load('arrow_down.svg', fill=$white);
+  }
+}
+
+.up-btn {
+  z-index: 2;
+  width: 26px;
+  height: 16px;
+  background: svg-load('portf_arrow_up.svg', fill=$grey) center center no-repeat;
+  background-size: contain;
+  margin-bottom: 250px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-image: svg-load('portf_arrow_up.svg', fill=$white);
+  }
+}
