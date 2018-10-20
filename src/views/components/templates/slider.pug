@@ -1,0 +1,29 @@
+script(type="text/x-template")#slider-root
+  .slider
+    info(
+      :work="currentWork"
+    )
+    .slider__right.js-slider
+      display(
+        :work="currentWork"
+      )
+      buttons(
+        @click="handleSlide"
+        :works="works"
+        :currentIndex="currentIndex"
+      )
+script(type="text/x-template")#slider-info
+  .slider__left
+    h3.subtitle {{work.title}}
+    b.slider__used {{work.used}}
+    a.slider__cite-btn(:href="work.link")
+      span.slider__cite-btn-text Посмотреть сайт
+script(type="text/x-template")#slider-display
+  .slider__right-main
+    img.slider__right-image(:src="work.image", :alt="work.title")
+script(type="text/x-template")#slider-btns
+  .slider__right-buttons
+    button.slider__btn.slider__btn-prev.js-slider-prev(type="button" @click="slide('prev')")
+      img.slider__btn-image(:src="nextButtonWorks[currentIndex].image", :alt="nextButtonWorks[currentIndex].title")
+    button.slider__btn.slider__btn-next.js-slider-next(type="button" @click="slide('next')")
+      img.slider__btn-image(:src="prevButtonWorks[currentIndex].image", :alt="prevButtonWorks[currentIndex].title")

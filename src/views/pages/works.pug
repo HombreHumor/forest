@@ -11,20 +11,21 @@ block content
   include ../common/main-header.pug
   .works
     +title('Мои работы', 'works')
-    .slider
-      .slider__left
-        +subtitle('Сайт школы онлайн Образования', 'js-slider-title')
-        b.slider__used.js-slider-used HTML , CSS, JAVASCRIPT
-        a.slider__cite-btn.js-slider-cite-btn(href="#")
-          span.slider__cite-btn-text Посмотреть сайт
-      .slider__right.js-slider
-        .slider__right-main
-          +image('/content/work-1.png', 'Сайт школы онлайн Образования', 'slider__right-image js-main-slide')
-        .slider__right-buttons
-          button.slider__btn.slider__btn-prev.js-slider-prev(type="button")
-            +image('/content/work-3.png', 'Сайт школы онлайн Образования', 'slider__btn-image')
-          button.slider__btn.slider__btn-next.js-slider-next(type="button")
-            +image('/content/work-2.png', 'Сайт школы онлайн Образования', 'slider__btn-image')
+    #sliderComponent
+      
+      //- .slider__left
+      //-   +subtitle('Сайт школы онлайн Образования', 'js-slider-title')
+      //-   b.slider__used.js-slider-used HTML , CSS, JAVASCRIPT
+      //-   a.slider__cite-btn.js-slider-cite-btn(href="#")
+      //-     span.slider__cite-btn-text Посмотреть сайт
+      //- .slider__right.js-slider
+      //-   .slider__right-main
+      //-     +image('/content/work-1.png', 'Сайт школы онлайн Образования', 'slider__right-image js-main-slide')
+      //-   .slider__right-buttons
+      //-     button.slider__btn.slider__btn-prev.js-slider-prev(type="button")
+      //-       +image('/content/work-3.png', 'Сайт школы онлайн Образования', 'slider__btn-image')
+      //-     button.slider__btn.slider__btn-next.js-slider-next(type="button")
+      //-       +image('/content/work-2.png', 'Сайт школы онлайн Образования', 'slider__btn-image')
   .abouts
     .abouts__wrapper-bg.js-abouts-bg
     +title('Что обо мне говорят', 'about')

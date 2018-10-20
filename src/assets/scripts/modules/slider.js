@@ -1,47 +1,105 @@
-const works = require('../../data/works.json');
-const mainSlide = document.querySelector('.js-main-slide');
-const sliderTitle = document.querySelector('.js-slider-title');
-const sliderUsed = document.querySelector('.js-slider-used');
-const sliderCiteBtn = document.querySelector('.js-slider-cite-btn');
-const prevSlide = document.querySelector('.js-slider-prev');
-const prevSlideImg = prevSlide.querySelector('img');
-const nextSlide = document.querySelector('.js-slider-next');
-const nextSlideImg = nextSlide.querySelector('img');
-const sliderLength = works.length;
-let currentSlide = 0;
+import Vue from 'vue';
 
-function slideLimiter(value) {
-  if (value >= sliderLength) {
-    return 0;
-  } else if (value < 0) {
-    return sliderLength - 1;
-  } else {
-    return value;
+const buttons = {
+  template: "#slider-btns",
+  props: {
+    works: Array,
+    currentIndex: Number
+  },
+  data() {
+    return {
+      prevButtonWorks: [],
+      nextButtonWorks: []
+    };
+  },
+  created() {
+    this.prevButtonWorks = this.retransformWorksForButton("prev");
+    this.nextButtonWorks = this.retransformWorksForButton("next");
+  },
+  methods: {
+    retransformWorksForButton(buttonDirection) {
+      const worksArray = [...this.works];
+      const lastItem = worksArray[worksArray.length - 1];
+      switch (buttonDirection) {
+        case "prev":
+          {
+            worksArray.unshift(lastItem);
+            worksArray.pop();
+            break;
+          }
+        case "next":
+          {
+            worksArray.push(worksArray[0]);
+            worksArray.shift();
+            break;
+          }
+      }
+
+      return worksArray;
+    },
+    slide(direction) {
+      this.$emit("click", direction);
+    }
+  }
+};
+
+const display = {
+  template: "#slider-display",
+  props: {
+    work: Object
+  }
+
+}
+const info = {
+  template: "#slider-info",
+  props: {
+    work: Object
   }
 }
+new Vue({
+  el: "#sliderComponent",
+  components: {
+    info,
+    display,
+    buttons
+  },
+  data() {
+    return {
+      works: [],
+      currentIndex: 0
+    };
+  },
+  computed: {
+    currentWork() {
+      return this.works[this.currentIndex];
+    }
+  },
+  watch: {
+    currentIndex(value) {
+      this.loopCurrentIndex(value);
+    }
+  },
+  created() {
+    const data = require('../../data/works.json');
+    this.works = data;
+  },
+  methods: {
+    handleSlide(direction) {
+      switch (direction) {
+        case "next":
+          this.currentIndex = this.currentIndex + 1;
+          break;
 
-function fillSlider() {
-  let prev = slideLimiter(currentSlide - 1);
-  let next = slideLimiter(currentSlide + 1);
-
-  mainSlide.src = works[currentSlide].image;
-  prevSlideImg.src = works[prev].image;
-  nextSlideImg.src = works[next].image;
-  sliderTitle.innerText = works[currentSlide].title;
-  sliderUsed.innerText = works[currentSlide].used.join(', ');
-  sliderCiteBtn.href = works[currentSlide].link;
-}
-
-export default () => {
-
-  prevSlide.addEventListener('click', () => {
-    currentSlide = slideLimiter(currentSlide - 1);
-    fillSlider();
-  })
-
-  nextSlide.addEventListener('click', () => {
-    currentSlide = slideLimiter(currentSlide + 1);
-    fillSlider();
-  })
-
-}
+        case "prev":
+          this.currentIndex = this.currentIndex - 1;
+          break;
+      }
+    },
+    loopCurrentIndex(currentValue) {
+      const worksAmount = this.works.length - 1;
+      if (currentValue > worksAmount) this.currentIndex = 0;
+      if (currentValue < 0) this.currentIndex = worksAmount;
+    }
+  },
+  template: "#slider-root"
+})
