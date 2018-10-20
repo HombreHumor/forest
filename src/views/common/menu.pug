@@ -1,0 +1,7 @@
+-var menu = [{name: 'Мои работы', link: '/works.html'},{name: 'Обо мне', link: '/about.html'},{name: 'Блог', link: '/blog.html'},{name: 'Авторизация', link: '/index.html?auth'}]
+
+nav.menu
+  ul.menu__list
+    each item in menu
+      li.menu__item
+        a.menu__link(href=item.link) #{item.name}

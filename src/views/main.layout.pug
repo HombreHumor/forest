@@ -15,6 +15,9 @@ html(lang="ru")
     .js-preloader-wrapper
       .wrapper
         .maincontent
+          button.hamburger-btn(type="button")
+            span.hamburger-btn__bar
+          include ./common/menu.pug
           block content
 
         include ./common/footer.pug

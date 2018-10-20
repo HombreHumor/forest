@@ -9,12 +9,10 @@ block scripts
 
 block content
   header.main-header.main-header--blog
-    .main-header__top.container
-      ul.socials
-          each item in ['vk', 'gh', 'ln']
-            li.socials__item
-              a.socials__link.socials__link--main(href="#", class=`socials__link--`+item)
-      button.main-header__menu-btn(type="button")
+    ul.socials.main-header__socials
+      each item in ['vk', 'gh', 'ln']
+        li.socials__item
+          a.socials__link.socials__link--main(href="#", class=`socials__link--`+item)
     .main-header__center.main-header__center--blog.container
       +image("content/user.jpg", "Владимир Астахов (фото)", "main-header__photo")
       +title('Блог', 'blog')

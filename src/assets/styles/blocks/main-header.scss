@@ -68,25 +68,10 @@
   }
 }
 
-.main-header__top {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.main-header__menu-btn {
-  background: none;
-  margin: 0;
-  padding: 0;
-  width: 40px;
-  height: 35px;
-  background: svg-load('hamburger.svg', fill=$white) center center no-repeat;
-
-  &:hover,
-  &:focus,
-  &:active {
-    background-image: svg-load('hamburger.svg', fill=$creame);
-  }
+.main-header__socials {
+  position: absolute;
+  top: 40px;
+  left: 40px;
 }
 
 .main-header__center {

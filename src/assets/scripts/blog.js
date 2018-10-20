@@ -1,6 +1,8 @@
 import scrollBy from './modules/scrollBy';
 import preloader from "./modules/preloader";
+import fullmenu from './modules/fullmenu';
 
+fullmenu();
 preloader();
 
 const articles = document.querySelectorAll('.blog__article');
