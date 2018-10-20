@@ -25,7 +25,7 @@ block content
             +image('/content/work-3.png', 'Сайт школы онлайн Образования', 'slider__btn-image')
           button.slider__btn.slider__btn-next.js-slider-next(type="button")
             +image('/content/work-2.png', 'Сайт школы онлайн Образования', 'slider__btn-image')
-  .abouts
+  .abouts.js-blur
     +title('Что обо мне говорят', 'about')
     ul.abouts__list
       each item in abouts
@@ -34,7 +34,8 @@ block content
           p.abouts__text #{item.text}
           b.abouts__name #{item.name}
           span.abouts__job= '— '+item.job
-    form.abouts__form(action="")
+    form.abouts__form.js-feedback(action="")
+      .abouts__bg
       +subtitle('Связаться со мной', 'subtitle--abouts')
       input.abouts__input(type="text", placeholder="Имя")
       input.abouts__input(type="text", placeholder="Email")

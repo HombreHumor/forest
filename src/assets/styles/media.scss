@@ -4,6 +4,13 @@
   }
 }
 
+@media (max-width: 1155px) {
+  .blog__nav-list.blog__nav-list--scroll {
+    left: 0;
+    max-width: calc(95vw - 680px);
+  }
+}
+
 @media (max-width: 768px) {
   
   // About page
