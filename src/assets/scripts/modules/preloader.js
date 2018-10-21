@@ -12,43 +12,21 @@ export default () => {
     let shadowImg;
 
     return {
-      shadowImgAdd: function () {
-        shadowImg = document.createElement('img');
-        shadowImg.setAttribute('src', img);
-        imgArr.push(shadowImg);
-      },
 
       show: function () {
         wrapper.classList.add('wrapper-hidden');
 
         return new Promise((resolve) => {
-          for (let i = 0; i < preloadImg.length; i++) {
-            if (preloadImg[i].matches('img')) {
-              img = preloadImg[i].getAttribute('src');
-              this.shadowImgAdd();
-            } else if (preloadImg[i].hasAttribute('style') && regImgUrl.test(preloadImg[i].getAttribute('style'))) {
-              img = (preloadImg[i].getAttribute('style').slice(22, -2));
-              this.shadowImgAdd();
+          let i = 0;
+          let interval = setInterval(()=> {
+            i++;
+            preloadText.innerText = `${i}%`;
+            if (i === 100) {
+              preloadText.innerText = `${i}%`;
+              clearInterval(interval);
+              resolve();
             }
-
-            allImg = 100 / imgArr.length;
-            for (let j = 0; j < imgArr.length; j++) {
-              imgArr[j].onload = function () {
-                progress += allImg;
-                if (progress < 100) {
-                  preloadText.innerText = `${Math.ceil(progress)}%`;
-                } else {
-                  progress = 100;
-                  preloadText.innerText = progress + '%';
-                }
-                if (Math.ceil(progress) === 100) {
-                  setTimeout(() => {
-                    resolve();
-                  }, 1000);
-                }
-              };
-            }
-          }
+          }, 10);
         }).then(function () {
           preloadBlock.style.display = 'none';
           wrapper.classList.remove('wrapper-hidden');
