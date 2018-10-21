@@ -1,0 +1,51 @@
+.blog-swipe {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 85vw;
+  background: $green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 56;
+  transform: translateX(-85vw);
+  transition: all .5s ease;
+
+  &--active {
+    transform: translateX(0);
+  }
+  
+  @media (max-width: 768px) {
+
+  }
+
+  &__open-btn {
+    position: fixed;
+    top: 50%;
+    left: 85vw;
+    width: 8px;
+    height: 40px;
+    border-radius: 0 40px 40px 0;
+    background: $green;
+  }
+
+  &__list {
+    max-width: 90%;
+  }
+
+  &__item {
+    margin-bottom: 30px;
+  }
+
+  &__nav-btn {
+    background: none;
+    color: $white;
+    text-align: left;
+    opacity: .5;
+
+    &--active {
+      opacity: 1;
+    }
+  }
+}

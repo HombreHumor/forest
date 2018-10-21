@@ -20,6 +20,12 @@ block content
     button.main-header__down-btn(type="button")
   main.blog
     .container.blog__container
+      nav.blog__swipe.blog-swipe
+        button.blog-swipe__open-btn
+        ul.blog-swipe__list
+          each artcl in articles
+            li.blog-swipe__item
+              button.blog-swipe__nav-btn(type="button" data-scrollto=artcl.link data-type="swipe") #{artcl.name}
       nav.blog__nav
         ul.blog__nav-list
           each artcl in articles
