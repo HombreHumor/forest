@@ -5,5 +5,12 @@
   "dark": "rgba(18, 38, 32, .6)",
   "green": " #6c9c5a",
   "creame": "#e2e2e2",
-  "light_green": "#729e19"
+  "light_green": "#729e19",
+  "desktop": "1200 px",
+  "tablets1100": "1100 px",
+  "tablets1000": "1000 px",
+  "tablets": "768 px",
+  "tablets600": "600 px",
+  "mobile": "480 px",
+  "mini": "380 px"
 }
