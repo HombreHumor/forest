@@ -2,7 +2,6 @@ extends ../main.layout.pug
 
 block variables
   - var title = 'Обо мне'
-  - var skills = [{"title":"Frontend","skills":[{"skill":"HTML5", "progress":95},{"skill":"CSS3", "progress":90},{"skill":"Javascript & jQuery", "progress":85}]},{"title":"Backend","skills":[{"skill":"PHP", "progress":30},{"skill":"MySQL", "progress":40},{"skill":"Node.JS & npm", "progress":70},{"skill":"MondoDB", "progress":50}]},{"title":"Workflow","skills":[{"skill":"Git", "progress":80},{"skill":"Gulp", "progress":70},{"skill":"Webpack", "progress":60}]}]
 
 block scripts
   script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw6BYEWm9ft20VkdRBtctm5pTSccf52Ro")
@@ -22,17 +21,6 @@ block content
       +subtitle('Чем я могу быть вам полезен', 'subtitle--skills')
       span.skills__text Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
       #skills-component
-      //- ul.skills__list
-      //-   each row in skills
-      //-     li.skills__item
-      //-       h4.skills__title #{row.title}
-      //-       .skills__row
-      //-         each skill in row.skills
-      //-           .skills__skill
-      //-             svg.skills__circle(viewBox='0 0 120 120', width='120', height='120')
-      //-               circle.skill__back(cx="50%" cy="50%" r="45")
-      //-               circle.skill__front(cx="50%" cy="50%" r="45", style=`stroke-dasharray: ${calcProgressDash(skill.progress)}; opacity: ${calcOpacity(skill.progress)}`)
-      //-             span.skills__skillname #{skill.skill}
   .map
     .map__gmap#gmap
     .map__contacts

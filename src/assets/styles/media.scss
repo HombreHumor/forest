@@ -104,6 +104,7 @@
 
   .abouts {
     padding: 0 24px;
+    padding-bottom: 20vh;
   }
 
   .abouts__up-btn {
@@ -265,4 +266,10 @@
   // blog
 
   
+}
+
+@media (max-width: 368px) {
+  .abouts {
+    padding-bottom: 40vh;
+  }
 }
