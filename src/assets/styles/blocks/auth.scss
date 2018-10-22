@@ -47,6 +47,69 @@
   position: relative;
   width: 100%;
   margin-bottom: 20px;
+
+  &--error {
+    .auth__input {
+      border: 1.5px solid #e44845;
+    }
+
+    &::before {
+      border-right: 1.5px solid #e44845;
+    }
+
+    .auth__error {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      &::before {
+        content: '';
+        position: absolute;
+        position: absolute;
+        top: 100%;
+        left: 40%;
+        border: 10px solid transparent;
+        border-right: 10px solid #e44845;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        position: absolute;
+        top: 100%;
+        left: 46%;
+        border: 10px solid transparent;
+        border-left: 10px solid #e44845;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 15%;
+      padding: 5px 20px;
+      background: #e44845;
+      z-index: 5;
+    }
+
+    &.auth__label--login::after {
+      content: 'Вы не ввели логин!';
+    }
+
+    &.auth__label--password::after {
+      content: 'Вы не ввели пароль!';
+    }
+
+    .auth__label-icon--login {
+      background: svg-load('login.svg', fill=#e44845) center center no-repeat;
+    }
+
+    .auth__label-icon--password {
+      background: svg-load('password.svg', fill=#e44845) center center no-repeat;
+    }
+  }
 }
 
 .auth__label::before {
@@ -97,6 +160,10 @@
   opacity: 0.8;
   padding: 0 0 0 30px;
   cursor: pointer;
+
+  &--error {
+    color: #e44845;
+  }
 }
 
 .auth__checkbox-label:before {
@@ -161,6 +228,10 @@
   opacity: 0.8;
   padding: 0 0 0 30px;
   cursor: pointer;
+
+  &--error {
+    color: #e44845;
+  }
 }
 
 .auth__radio-label:before {

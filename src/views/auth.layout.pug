@@ -133,8 +133,12 @@ html(lang="en")
       }
       
       function onWindowResize( event ) {
-          var height = ((window.innerWidth / 16) * 9).toFixed(2);
-          renderer.setSize( window.innerWidth, height );
+          if (window.innerWidth < 1920) {
+            renderer.setSize( '1920', window.innerHeight );
+          } else {
+            var height = ((window.innerWidth / 16) * 9).toFixed(2);
+            renderer.setSize( window.innerWidth, height );
+          }
           uniforms.u_resolution.value.x = renderer.domElement.width;
           uniforms.u_resolution.value.y = renderer.domElement.height;
           uniforms.u_mouse.value.x = mouse.x;

@@ -1,5 +1,6 @@
 export default () => {
   (function initMap() {
+    const google = window.google;
     const map = new google.maps.Map(document.getElementById("gmap"), {
       zoom: 14,
       center: {
@@ -195,5 +196,7 @@ export default () => {
       map: map,
       icon: image
     });
+
+    marker.setMap(map);
   })();
 }

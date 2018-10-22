@@ -22,10 +22,12 @@ block content
       .auth__container.js-toogle-face
         form.auth(action="")
           h1.auth__title Авторизуйтесь
-          label.auth__label(for="login")
+          label.auth__label.auth__label--login(for="login")
+            .auth__error
             figure.auth__label-icon.auth__label-icon--login
             input.auth__input#login(type="text", placeholder="Логин")
-          label.auth__label(for="password")
+          label.auth__label.auth__label--password(for="password")
+            .auth__error
             figure.auth__label-icon.auth__label-icon--password
             input.auth__input#password(type="password", placeholder="Пароль")
           .auth__checkbox-row
