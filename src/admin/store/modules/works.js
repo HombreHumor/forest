@@ -45,27 +45,28 @@ const works = {
     edit({
       commit
     }, work) {
-      const data = new FormData();
+      console.log(this);
+      // const data = new FormData();
 
-      data.append('title', work.title);
-      data.append('techs', work.techs);
-      data.append('link', work.link);
-      data.append('photo', work.photo);
-      const config = {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      };
-      this.$axios.post(`/works/${work.id}`, data, config).then(
-        response => {
-          commit('editWork', response.data);
-          commit('removeWork', work.id);
-          commit('addNewWork', work);
-        },
-        error => {
-          console.log(error)
-        }
-      )
+      // data.append('title', work.title);
+      // data.append('techs', work.techs);
+      // data.append('link', work.link);
+      // data.append('photo', work.photo);
+      // const config = {
+      //   headers: {
+      //     'Content-Type': 'multipart/form-data'
+      //   }
+      // };
+      // this.$axios.post(`/works/${work.id}`, data, config).then(
+      //   response => {
+      //     commit('editWork', response.data);
+      //     commit('removeWork', work.id);
+      //     commit('addNewWork', work);
+      //   },
+      //   error => {
+      //     console.log(error)
+      //   }
+      // )
     },
     remove({commit}, workId) {
       this.$axios.delete(`/works/${workId}`).then(

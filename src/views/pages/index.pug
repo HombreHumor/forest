@@ -8,12 +8,12 @@ block content
       .welcome__container
         section.hello
           +image("content/user.jpg", "Владимир Астахов (фото)", "hello__photo")
-          h1.hello__name Владимир Астахов
+          h1.hello__name Игорь Крамарь
           h2.hello__descr Личный сайт веб разработчика
           ul.socials
-            each item in ['vk', 'gh', 'ln']
+            each item in [{class:'vk', link:'https://vk.com/kramar_i'}, {class:'gh', link:'https://github.com/HombreHumor'}]
               li.socials__item
-                a.socials__link(href="#", class=`socials__link--`+item)
+                a.socials__link(href=item.link, class=`socials__link--`+item.class)
         nav.welc-menu
           ul.welc-menu__list
             each item in [['Мои работы', '/works.html'],['Обо мне', '/about.html'],['Блог', '/blog.html']]
@@ -46,4 +46,4 @@ block content
             each item in [['На главную', 'js-back-to-main', 'button'],['Войти', 'js-auth-enter', 'submit']]
               li.welc-menu__item.welc-menu__item--auth
                 button.welc-menu__button(type=item[2], class=item[1]) #{item[0]}
-    footer.welcome__footer © Владимир Астахов | создано с любовью в LoftSchool | 2016
+    footer.welcome__footer © Игорь Крамарь | создано с любовью в LoftSchool | 2018

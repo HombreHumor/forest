@@ -14,19 +14,23 @@ block content
       +image("content/user.jpg", "Владимир Астахов (фото)", "persona__photo")
       +subtitle('Кто я', 'subtitle--persona')
       .persona__info
-        p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+        p Я веб разработчик из Омска. Мне 25 лет. Я занимаюсь backend и frontend разработкой, интересуюсь современными технологиями и стремлюсь быть профессионалом в своей области.
         p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
      
     section.about__skills.skills
       +subtitle('Чем я могу быть вам полезен', 'subtitle--skills')
-      span.skills__text Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+      span.skills__text Меня привлекает как Backend-разработка, так и Fronend. Ниже представлены навыки, которыми я владею.
       #skills-component
   .map
     .map__gmap#gmap
     .map__contacts
       +subtitle('Контакты', 'subtitle--map')
       ul.map__contacts-list
-        li.map__contact-item.map__contact-item--skype skype_kdn
-        li.map__contact-item.map__contact-item--mail astahov@gmail.com
-        li.map__contact-item.map__contact-item--phone +7 931 200 93 24
-        li.map__contact-item.map__contact-item--address Новосибирск, ул. Инская, д.14
+        li.map__contact-item
+          a.map__contact-link.map__contact-link--skype(href='skype:hombrehumor@gmail.com') hombrehumor@gmail.com
+        li.map__contact-item
+          a.map__contact-link.map__contact-link--mail(href='mailto:hombrehumor@gmail.com') hombrehumor@gmail.com
+        li.map__contact-item
+          a.map__contact-link.map__contact-link--phone(href='tel:+79136760473') +7 913 676 0473
+        li.map__contact-item
+          a.map__contact-link.map__contact-link--address(href='https://yandex.ru/maps/-/CBBwbEtuKA') Омск, 24 Северная, 168/2

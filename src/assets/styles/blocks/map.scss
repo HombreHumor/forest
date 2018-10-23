@@ -29,42 +29,75 @@
 }
 
 .map__contact-item {
-  font-weight: 500;
-  opacity: 0.8;
-  color: #566358;
   &:not(:last-child) {
     margin-bottom: 28px;
+  }
+}
+
+.map__contact-link {
+  display: block;
+  font-weight: 500;
+  text-decoration: none;
+  opacity: 0.8;
+  color: #566358;
+  &:visited,
+  &:active {
+    color: #566358;
   }
   &::before { 
     content: '';
     margin-right: 20px;
   }
-}
-
-.map__contact-item--skype {
-  &::before {
-    padding: 12px;
-    background: svg-load('skype.svg', fill=$green) center center no-repeat;
+  &--skype {
+    &::before {
+      padding: 12px;
+      background: svg-load('skype.svg', fill=$green) center center no-repeat;
+    }
+  }
+  &--mail {
+    &::before {
+      padding: 12px;
+      background: svg-load('envelope2.svg', fill=$green) center center no-repeat;
+    }
+  }
+  &--phone {
+    &::before {
+      padding: 12px;
+      background: svg-load('phone2.svg', fill=$green) center center no-repeat;
+    }
+  }
+  &--address {
+    &::before {
+      padding: 12px;
+      background: svg-load('map_marker.svg', fill=$green) center center no-repeat;
+    }
   }
 }
 
-.map__contact-item--mail {
-  &::before {
-    padding: 12px;
-    background: svg-load('envelope2.svg', fill=$green) center center no-repeat;
-  }
-}
+// .map__contact-item--skype {
+//   &::before {
+//     padding: 12px;
+//     background: svg-load('skype.svg', fill=$green) center center no-repeat;
+//   }
+// }
 
-.map__contact-item--phone {
-  &::before {
-    padding: 12px;
-    background: svg-load('phone2.svg', fill=$green) center center no-repeat;
-  }
-}
+// .map__contact-item--mail {
+//   &::before {
+//     padding: 12px;
+//     background: svg-load('envelope2.svg', fill=$green) center center no-repeat;
+//   }
+// }
 
-.map__contact-item--address {
-  &::before {
-    padding: 12px;
-    background: svg-load('map_marker.svg', fill=$green) center center no-repeat;
-  }
-}
+// .map__contact-item--phone {
+//   &::before {
+//     padding: 12px;
+//     background: svg-load('phone2.svg', fill=$green) center center no-repeat;
+//   }
+// }
+
+// .map__contact-item--address {
+//   &::before {
+//     padding: 12px;
+//     background: svg-load('map_marker.svg', fill=$green) center center no-repeat;
+//   }
+// }

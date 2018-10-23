@@ -8,7 +8,7 @@
       img.work-item__img(v-bind:src="'https://webdev-api.loftschool.com/' + work.photo" alt="Изображение проекта")
     td.work-item__buttons
       button(
-        @click="editWork(work)"
+        @click="editWork(work); changeEditMode()"
         type="button"
       ).button.button--edit
       button(
@@ -31,7 +31,10 @@
       ...mapActions({
         removeWork: 'works/remove',
         editWork: 'works/edit',
-      })
+      }),
+      changeEditMode() {
+        
+      }
     }
   }
 </script>

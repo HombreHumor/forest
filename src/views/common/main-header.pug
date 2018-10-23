@@ -1,10 +1,10 @@
 header.main-header
   ul.socials.main-header__socials
-    each item in ['vk', 'gh', 'ln']
+    each item in [{class:'vk', link:'https://vk.com/kramar_i'}, {class:'gh', link:'https://github.com/HombreHumor'}]
       li.socials__item
-        a.socials__link.socials__link--main(href="#", class=`socials__link--`+item)
+        a.socials__link.socials__link--main(href=item.link, class=`socials__link--`+item.class)
   .main-header__center.container
-    +image("content/user.jpg", "Владимир Астахов (фото)", "main-header__photo")
-    h1.main-header__title Владимир Астахов
+    +image("content/user.jpg", "Игорь Крамарь (фото)", "main-header__photo")
+    h1.main-header__title Игорь Крамарь
     h2.main-header__subtitle Личный сайт веб разработчика
   button.down-btn(type="button")

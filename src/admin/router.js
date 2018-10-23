@@ -24,17 +24,17 @@ const checkUser = axios.create({
   baseURL: 'https://webdev-api.loftschool.com/'
 });
 
-router.beforeEach((to, from, next) => {
-  checkUser.get('/user', {
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem('token')}`
-    }
-  }).then(response => { 
-    next()
-  }).catch(error => {
-    localStorage.removeItem('token');
-    window.location.href="/?auth";
-  })
-});
+// router.beforeEach((to, from, next) => {
+//   checkUser.get('/user', {
+//     headers: {
+//       Authorization: `Bearer ${localStorage.getItem('token')}`
+//     }
+//   }).then(response => { 
+//     next()
+//   }).catch(error => {
+//     localStorage.removeItem('token');
+//     window.location.href="/?auth";
+//   })
+// });
 
 export default router;

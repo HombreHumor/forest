@@ -4,8 +4,8 @@ export default () => {
     const map = new google.maps.Map(document.getElementById("gmap"), {
       zoom: 14,
       center: {
-        lat: 55.01042806,
-        lng: 82.90980267
+        lat: 55.018402,
+        lng: 73.341074
       },
       styles: [{
           featureType: "all",
@@ -190,8 +190,8 @@ export default () => {
 
     const marker = new google.maps.Marker({
       position: {
-        lat: 55.01091807,
-        lng: 82.93429031
+        lat: 55.023118,
+        lng: 73.377666
       },
       map: map,
       icon: image

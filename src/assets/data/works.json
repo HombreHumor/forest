@@ -1,20 +1,20 @@
 [
   {
-    "title": "Сайт школы онлайн Образования",
+    "title": "Воркадиум - учебный проект корпоративного сайта",
     "image": "/assets/images/content/work-1.png",
-    "used": ["html", "css", "javascript"],
-    "link": "#1"
+    "used": "html, css",
+    "link": "https://hombrehumor.github.io/loftschool_ovProject/"
   },
   {
-    "title": "Дизайн",
+    "title": "Mr. Burger - учебный проект",
     "image": "/assets/images/content/work-2.png",
-    "used": ["html", "css"],
-    "link": "#2"
+    "used": "pug, scss, svg, javascript",
+    "link": "https://hombrehumor.github.io/loftschool_jsentryProject/build/"
   },
   {
-    "title": "Будда",
+    "title": "Сайт-портфолио - разработан в ходе учебного курса",
     "image": "/assets/images/content/work-3.png",
-    "used": ["css", "javascript"],
+    "used": "pug, scss, webpack, javascript, vue",
     "link": "#3"
   }
 ]

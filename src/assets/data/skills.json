@@ -2,26 +2,36 @@
     "skillsGroup": "Frontend",
     "skillsItem": {
       "HTML5": 95,
-      "CSS": 85,
-      "JavaScript & jQuery": 80,
-      "Vue": 30
+      "CSS3": 85,
+      "SCSS": 80,
+      "PUG": 80,
+      "PostCSS": 50,
+      "JavaScript (inc. ES6)": 85,
+      "Vue": 20
     }
   },
   {
     "skillsGroup": "Backend",
     "skillsItem": {
       "PHP": 75,
-      "MySQL": 80,
-      "Node.js & npm": 80,
-      "Mongo.db": 90
+      "Python": 25,
+      "MySQL": 60,
+      "Node.js & npm": 90,
+      "Express": 90,
+      "Mongo DB": 90,
+      "REST API": 85,
+      "Apache": 65,
+      "Nginx": 70
     }
   },
   {
     "skillsGroup": "WorkFlow",
     "skillsItem": {
-      "Git": 80,
+      "Git": 90,
       "Gulp": 75,
-      "Webpack": 70
+      "Webpack": 70,
+      "Bash": 95,
+      "Docker": 15
     }
   }
 ]
